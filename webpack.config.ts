@@ -62,6 +62,12 @@ const webpackConfig: Configuration = {
 					name: 'vendor.react',
 					filename: '[name].[hash].js',
 					chunks: 'all',
+				},
+				muiVendor: {
+					test: /[\\/]node_modules[\\/](@mui)[\\/]/,
+					name: 'vendor.mui',
+					filename: '[name].[hash].js',
+					chunks: 'all',
 				}
 			}
 		}
