@@ -1,8 +1,10 @@
 import {createRoot} from "react-dom/client";
+import "@fontsource/roboto";
 import "./style.scss";
+import AppComponent from "./components/app/app.component";
 
 const root = document.getElementById("root");
 if (!root) {
 	throw new Error('Failed to find the root element');
 }
-createRoot(root).render(<h1>teste 3</h1>);
+createRoot(root).render(<AppComponent/>);
