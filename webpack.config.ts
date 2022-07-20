@@ -4,7 +4,8 @@ import HtmlPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import DotEnvPlugin from 'dotenv-webpack';
-import {description} from './package.json';
+import CopyPlugin from 'copy-webpack-plugin';
+import {meta} from './package.json';
 
 const isDev = process.env.NODE_ENV !== "production";
 const webpackConfig: Configuration = {
@@ -54,13 +55,35 @@ const webpackConfig: Configuration = {
 	plugins: [
 		new DotEnvPlugin(),
 		new HtmlPlugin({
+			favicon: resolve(__dirname, 'src', 'images', 'favicon', 'favicon.png'),
 			template: resolve(__dirname, 'public', 'template.html'),
-			title: description,
-			lang: 'pt-BR'
+			title: meta.title,
+			lang: 'pt-BR',
+			meta: {
+				'og:url': meta.url,
+				'og.title': meta.title,
+				'og:description': meta.description,
+				'og:image': `${meta.url}images/share.png`,
+				'og:type': meta.type,
+				'twitter:card': "summary_large_image",
+				'twitter:domain': new URL(meta.url).host,
+				'twitter:url': meta.url,
+				'twitter:title': meta.title,
+				'twitter:description': meta.description,
+				'twitter:image': `${meta.url}images/share.png`,
+			},
 		}),
 		new MiniCssExtractPlugin({
 			filename: isDev ? '[name].css' : '[name].[chunkhash].css',
 			chunkFilename: isDev ? '[id].css' : '[id].[chunkhash].css',
+		}),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: "public/images",
+					to: "images"
+				}
+			]
 		})
 	],
 	optimization: {

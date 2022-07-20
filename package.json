@@ -1,7 +1,7 @@
 {
-  "name": "personal",
+  "name": "casa-nova",
   "version": "1.0.0",
-  "description": "Site para casa nova",
+  "description": "Website para casa nova",
   "private": true,
   "scripts": {
     "clean": "rimraf dist/",
@@ -12,6 +12,7 @@
   "author": "Diego Lopes <dihgg@dihgg.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/copy-webpack-plugin": "^10.1.0",
     "@types/dotenv-webpack": "^7.0.3",
     "@types/html-webpack-plugin": "^3.2.6",
     "@types/mini-css-extract-plugin": "^2.5.1",
@@ -52,5 +53,11 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "meta": {
+    "title": "Casa Nova",
+    "description": "Venha celebrar conosco e conhecer nossa nova casa!",
+    "url": "https://dihgg.com/casa-nova/",
+    "type": "website"
   }
 }
