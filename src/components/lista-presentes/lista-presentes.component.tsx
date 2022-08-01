@@ -145,9 +145,14 @@ const ListaPresentesComponent = (props: BoxProps) => {
 							Obrigada por visitar a nossa lista!
 						</Typography>
 						<Box textAlign={{xs: "left", md: "right"}}>
-							<Typography marginY="2rem">Essas sao algumas sugestões, mas se preferir, você também pode nos ajudar com
-								qualquer valor para contribuir com a nossa geladeira!</Typography>
-							<Typography marginBottom="2rem">Qualquer dúvida pode nos procurar no whatsapp em 11984908722.</Typography>
+							<Typography marginY="2rem">
+								Essas sao algumas sugestões, mas se preferir, você também pode nos ajudar com
+								qualquer valor para contribuir com a nossa geladeira!
+							</Typography>
+							<Typography marginBottom="1rem">
+								Qualquer dúvida pode nos procurar no whatsapp em&nbsp;
+								<Link href="https://wa.me/5511984908722" target="_blank">11984908722</Link>.
+							</Typography>
 							<Typography variant="caption">Esse também é nosso pix! 😉</Typography>
 						</Box>
 					</Grid>
