@@ -7,7 +7,8 @@
     "clean": "rimraf dist/",
     "start": "webpack serve --mode development",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "postbuild": "rimraf dist/**/*.LICENSE.txt"
   },
   "author": "Diego Lopes <dihgg@dihgg.com>",
   "license": "ISC",
@@ -49,6 +50,7 @@
     "@mui/material": "^5.9.0",
     "@mui/x-data-grid": "^5.13.0",
     "axios": "^0.27.2",
+    "calendar-link": "^2.2.0",
     "file-loader": "^6.2.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",

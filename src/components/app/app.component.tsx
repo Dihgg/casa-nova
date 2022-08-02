@@ -34,7 +34,7 @@ const AppComponent  = () => {
 					background: "#bfdfd9"
 				}}
 			>
-				<Container id="main-container" sx={{margin: "auto"}}>
+				<Container id="main-container" sx={{margin: "auto", overflowX: 'hidden'}}>
 					<Suspense fallback={<LoadingComponent />}>
 						<FullPageComponent>
 							<HeaderComponent marginY="1rem"/>
