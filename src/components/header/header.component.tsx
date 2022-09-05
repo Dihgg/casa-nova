@@ -51,7 +51,7 @@ export const HeaderComponent = (props: BoxProps) => {
 							Dia&nbsp;
 							<time dateTime={`${date}`}>
 								{new Intl.DateTimeFormat('pt-BR', {dateStyle: 'short'}).format(date)}
-								&nbsp;às&nbsp;
+								&nbsp;-&nbsp;
 								{new Intl.DateTimeFormat('pt-BR', {timeStyle:'short'}).format(date)}
 							</time>
 						</Typography>
